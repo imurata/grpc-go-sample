@@ -1,7 +1,9 @@
 # grpc-go-sample
 
 ## build
-cd example 
+```
+cd example
 make 
-docker build -t <your repo> .
-docker push <your repo> 
+docker build -t <your repo> . 
+docker push <your repo>
+```
