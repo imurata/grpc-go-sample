@@ -16,9 +16,17 @@ build:
 	go build -o $(SERVER_BINARY) $(SERVER_ENTRY)
 
 clean:
-
 	rm $(CLIENT_BINARY) || true
 	rm $(SERVER_BINARY) || true
 	rm go.mod go.sum || true
 	rm -r ./grpc_sample/* || true
-	
+
+dockerbuild:
+	cd ./client
+	docker build -t $(DOCKER_REPO)/grpc-client .
+	docker push $(DOCKER_REPO)/grpc-client
+	cd -
+	cd ./server
+	docker build -t $(DOCKER_REPO)/grpc-server .
+	docker push $(DOCKER_REPO)/grpc-server
+	cd -
