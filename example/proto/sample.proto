@@ -1,0 +1,13 @@
+syntax = "proto3";
+package sample;
+
+option go_package = "../grpc_sample";
+
+message Message {
+  string body = 1;
+}
+
+service SampleService {
+  rpc GetData(Message) returns (Message) {}
+}
+
