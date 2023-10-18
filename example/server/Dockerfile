@@ -6,5 +6,5 @@ COPY ./server ./server
 
 EXPOSE 9000
 
-CMD ["./server"]
+ENTRYPOINT ["./server"]
 

@@ -6,5 +6,5 @@ COPY ./client ./client
 
 EXPOSE 8080
 
-CMD ["./client"]
+ENTRYPOINT ["./client"]
 
