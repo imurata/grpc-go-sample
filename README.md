@@ -3,6 +3,7 @@
 ## Build
 ```
 cd example
+export PATH=$PATH:/usr/local/go/bin
 make 
 docker build -t <your repo> . 
 docker push <your repo>
