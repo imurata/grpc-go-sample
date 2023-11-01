@@ -1,5 +1,27 @@
 # grpc-go-sample
 
+## Prepare
+sudo add-apt-repository ppa:longsleep/golang-backports
+sudo apt update
+sudo apt --fix-broken install
+sudo apt install golang
+
+VER=24.1
+curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v${VER}/protoc-${VER}-linux-x86_64.zip
+sudo unzip protoc-${VER}-linux-x86_64.zip -d /usr/local/protobuf
+
+RUNTIME_VER=v1.31.0
+curl -OL https://github.com/protocolbuffers/protobuf-go/releases/download/v1.31.0/protoc-gen-go.${RUNTIME_VER}.linux.amd64.tar.gz
+sudo tar xzvf protoc-gen-go.${RUNTIME_VER}.linux.amd64.tar.gz -C /usr/local/protobuf/bin
+
+export PATH=$PATH:/usr/local/protobuf/bin
+echo 'export PATH=$PATH:/usr/local/protobuf/bin' >> ~/bashrc
+
+export PATH=$PATH:$HOME/go/bin
+echo 'export PATH=$PATH:$HOME/go/bin' >> ~/bashrc
+go get google.golang.org/grpc/cmd/protoc-gen-go-grpc
+
+
 ## Build
 ```
 cd example
