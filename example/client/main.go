@@ -23,11 +23,12 @@ func main() {
 
 		response, err := c.GetData(context.Background(), &grpc_sample.Message{Body: "send data"})
 		if err != nil {
-			log.Fatalf("Error: %s", err)
+			log.Printf("Error: %s", err)
+			http.Error(w, "Internal Server Error", http.StatusInternalServerError)
 		}
 		log.Print(response.Body)
 
-		defer conn.Close()
+		conn.Close()
 	})
 
 	log.Print("HTTP server is listening on :8080")
