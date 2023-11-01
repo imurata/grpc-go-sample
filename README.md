@@ -1,6 +1,7 @@
 # grpc-go-sample
 
 ## Prepare
+```
 sudo add-apt-repository ppa:longsleep/golang-backports
 sudo apt update
 sudo apt --fix-broken install
@@ -20,7 +21,7 @@ echo 'export PATH=$PATH:/usr/local/protobuf/bin' >> ~/bashrc
 export PATH=$PATH:$HOME/go/bin
 echo 'export PATH=$PATH:$HOME/go/bin' >> ~/bashrc
 go get google.golang.org/grpc/cmd/protoc-gen-go-grpc
-
+```
 
 ## Build
 ```
